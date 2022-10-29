@@ -12,7 +12,10 @@ function App() {
 
   const handleAddUser = event => {
     event.preventDefault();
-
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const user = { name, email }
+    console.log(user)
   }
   return (
     <div className="App">
