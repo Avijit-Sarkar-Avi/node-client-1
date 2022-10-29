@@ -15,16 +15,19 @@ function App() {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const user = { name, email }
-    console.log(user)
-    event.target.reset()
+    console.log(user);
+    fetch('http://localhost:5000/users')
+      .then(res => res.json())
+      .then(data => console.log(data))
+    event.target.reset();
   }
   return (
     <div className="App">
 
       <form onSubmit={handleAddUser}>
-        <input type="text" name='name' />
+        <input type="text" name='name' placeholder='Enter Name' />
         <br />
-        <input type="email" name='email' />
+        <input type="email" name='email' placeholder='Enter Email' />
         <br />
         <button type='submit'>Add User</button>
       </form>
