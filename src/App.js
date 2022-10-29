@@ -12,6 +12,13 @@ function App() {
   return (
     <div className="App">
       <h2>Users: {users.length}</h2>
+
+      {
+        users.map(user => <p key={user.id}>
+          {user.name}
+          {user.email}
+        </p>)
+      }
     </div>
   );
 }
