@@ -16,6 +16,7 @@ function App() {
     const email = event.target.email.value;
     const user = { name, email }
     console.log(user)
+    event.target.reset()
   }
   return (
     <div className="App">
